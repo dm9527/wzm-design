@@ -41,17 +41,17 @@
 
 <script setup>
 import { reactive, ref, watch } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 import { useRouterStore } from '@/pinia/modules/router'
-import { useAppStore,useUserStore } from '@/pinia'
+import { useUserStore } from '@/pinia/modules/user'
+
 defineOptions({
   name: 'CommandMenu',
 })
-const appStore = useAppStore()
-const userStore = useUserStore()
 
 const router = useRouter()
 const route = useRouter()
+const userStore = useUserStore()
 const routerStore = useRouterStore()
 const dialogVisible = ref(false)
 const searchInput = ref('')
@@ -134,10 +134,10 @@ const changeRouter = (e) => {
 
 const changeMode = (e) => {
   if (e === null) {
-    appStore.toggleTheme(false )
+    userStore.changeSideMode('dark')
     return
   }
-  appStore.toggleTheme(true )
+  userStore.changeSideMode(e)
 }
 
 const close = () => {
@@ -172,7 +172,6 @@ watch(searchInput, () => {
     color: #666;
   }
   .quick-input{
-    @apply bg-gray-50 dark:bg-gray-800;
     color: #666;
     border-radius: 4px 4px 0 0;
     border:none;
@@ -187,8 +186,8 @@ watch(searchInput, () => {
     padding: 8px;
     margin: 4px 0;
     &:hover{
-      @apply bg-gray-200 dark:bg-slate-500;
       cursor: pointer;
+      background: #eee;
       border-radius: 4px;
     }
   }

@@ -16,6 +16,7 @@ export const useUserStore = defineStore('user', () => {
     headerImg: '',
     authority: {},
     sideMode: 'dark',
+    activeColor: 'var(--el-color-primary)',
     baseColor: '#fff'
   })
   const token = ref(window.localStorage.getItem('token') || cookie.get('x-token') || '')
@@ -133,6 +134,9 @@ export const useUserStore = defineStore('user', () => {
       return userInfo.value.baseColor
     }
   })
+  const activeColor = computed(() => {
+    return 'var(--el-color-primary)'
+  })
 
   watch(() => token.value, () => {
     window.localStorage.setItem('token', token.value)
@@ -151,6 +155,7 @@ export const useUserStore = defineStore('user', () => {
     sideMode,
     setToken,
     baseColor,
+    activeColor,
     loadingInstance,
     ClearStorage
   }

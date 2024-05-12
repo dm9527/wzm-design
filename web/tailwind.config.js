@@ -9,19 +9,9 @@ module.exports = {
     extend: {
       backgroundColor: {
         "main": "#F5F5F5",
-      },
-      textColor: {
-        "active": "var(--el-color-primary)",
-      },
-      boxShadowColor: {
-        "active": "var(--el-color-primary)",
-      },
-      borderColor: {
-        "table-border": "var(--el-border-color-lighter)",
       }
     },
   },
-  darkMode: "class",
   plugins: [],
   corePlugins: {
     preflight: false
