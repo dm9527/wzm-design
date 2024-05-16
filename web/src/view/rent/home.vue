@@ -2,7 +2,6 @@
     <div class="p-4">
         <TestRouterjump></TestRouterjump>
     </div>
-
 </template>
 
 <script setup>

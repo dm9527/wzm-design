@@ -1,6 +1,6 @@
 <template>
     <div class="p-4">
-        <el-card>111</el-card>
+        <el-card>系统管理</el-card>
     </div>
 
 </template>
