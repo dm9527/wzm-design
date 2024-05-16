@@ -126,7 +126,7 @@ mysql:
     db-name: wzmDesign
     username: root
     password: "123456"
-    path: 127.0.0.1
+    path: 10.16.23.197
     engine: ""
     log-mode: error
     max-idle-conns: 10

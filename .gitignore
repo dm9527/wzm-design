@@ -23,6 +23,7 @@ yarn-error.log*
 *.sw?
 
 /server/log/
+/server/config.yaml
 /server/gva
 /server/latest_log
 /server/__debug_bin*
